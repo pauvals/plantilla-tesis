@@ -24,8 +24,8 @@
 \newif\if@loademptypage %\@loademptypagefalse
 \DeclareOption{emptypage}{\@loademptypagetrue}
 % French
-\newif\if@loadfrench %\@loadfrenchfalse
-\DeclareOption{french}{\@loadfrenchtrue}
+%\newif\if@loadfrench %\@loadfrenchfalse
+%\DeclareOption{french}{\@loadfrenchtrue}
 % Tikz
 \newif\if@loadtikz %\@loadtikzfalse
 \DeclareOption{tikz}{\@loadtikztrue}
@@ -42,9 +42,13 @@
   \RequirePackage{emptypage}
 \fi
 % French
-\if@loadfrench
-  \RequirePackage[french]{babel}
-\fi
+%\if@loadfrench
+%  \RequirePackage[french]{babel}
+%\fi
+% Español
+%\if@loadspanish
+%  \RequirePackage[spanish]{babel}
+%\fi
 % Tikz
 % see in the Tikz section
 

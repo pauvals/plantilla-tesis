@@ -1,37 +1,33 @@
+%%%% Modificaciones a la plantilla propuesta por kira.ribeiro@universite-paris-saclay.fr  %%%%
+%%%% Cambios del 31/03/2026 %%%%
+
 %%%% Modèle proposé par kira.ribeiro@universite-paris-saclay.fr  %%%%
 %%%% màj : 27/01/2023 %%%%
 
-\documentclass[french,12pt,a4paper]{book}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage[default,oldstyle, scale=.95]{opensans} % police Open Sans
+\documentclass[spanish,12pt,a4paper]{book}
+\usepackage[spanish]{babel}
+%\usepackage{fontspec}
+%\setmainfont{Helvetica}
+%\setmainfont{Reforma1918}[
+%    Path=/usr/share/fonts/Reforma/Reforma-Desktop/Reforma1918,
+%    Extension = .ttf,
+%    UprightFont=*-Regular,
+%    BoldFont=*-Bold,
+%    ItalicFont=*-Italic,
+%    BoldItalicFont=*-BoldItalic
+%    ]
+%\usepackage[default,oldstyle, scale=.95]{opensans} 
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{caption}
-\captionsetup[figure]{font=small,labelfont=small}
-\usepackage{xcolor} % où color selon l'installation
-\definecolor{Prune}{RGB}{99,0,60} % l14-33 : couleurs de la charte graphique upsaclay
-\definecolor{B1}{RGB}{49,62,72} 
-\definecolor{C1}{RGB}{124,135,143}
-\definecolor{D1}{RGB}{213,218,223}
-\definecolor{A2}{RGB}{198,11,70}
-\definecolor{B2}{RGB}{237,20,91}
-\definecolor{C2}{RGB}{238,52,35}
-\definecolor{D2}{RGB}{243,115,32}
-\definecolor{A3}{RGB}{124,42,144}
-\definecolor{B3}{RGB}{125,106,175}
-\definecolor{C3}{RGB}{198,103,29}
-\definecolor{D3}{RGB}{254,188,24}
-\definecolor{A4}{RGB}{0,78,125}
-\definecolor{B4}{RGB}{14,135,201}
-\definecolor{C4}{RGB}{0,148,181}
-\definecolor{D4}{RGB}{70,195,210}
-\definecolor{A5}{RGB}{0,128,122}
-\definecolor{B5}{RGB}{64,183,105}
-\definecolor{C5}{RGB}{140,198,62}
-\definecolor{D5}{RGB}{213,223,61}
+\usepackage{xcolor} 
+% De la Paleta de colores Imagen institucional FCQ UNC:
+\definecolor{Azul1FCQ}{RGB}{00,00,102} 
+\definecolor{Azul2FCQ}{RGB}{00,00,230}
+\definecolor{Azul3FCQ}{RGB}{00,85,124}
+\definecolor{Azul4FCQ}{RGB}{48,156,174}
+\definecolor{VerdeFCQ}{RGB}{47,172,102}
+\definecolor{AmarilloFCQ}{RGB}{238,205,00}
 \usepackage{mdframed}
 \usepackage{multirow} %% Pour mettre un texte sur plusieurs rangées
 \usepackage{multicol} %% Pour mettre un texte sur plusieurs colonnes
@@ -48,8 +44,6 @@
     linkcolor=black,
     urlcolor=A5}
 
-\renewcommand{\FrenchLabelItem}{\textbullet}
-
 \pagestyle{plain} % pour ne garder que les n°de page en milieu-bas et supprimer les indications de chapitre en marge haute
 
 \usepackage{lipsum} % à retirer!!!
@@ -57,68 +51,63 @@
 
 \begin{titlepage}
 
-%\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Esto agrega un rectangulito con el texto indicado en la esquina inferior izquierda.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newgeometry{left=6cm,bottom=2cm, top=1cm, right=1cm}
 
-\newgeometry{left=6cm,bottom=2cm, top=1cm, right=1cm}
-
-\tikz[remember picture,overlay] \node[opacity=1,inner sep=0pt] at (-13mm,-135mm){\includegraphics{Frame-ups.pdf}};
-
-%*****************************************************
-%******** NUMÉRO D'ORDRE DE LA THÈSE À COMPLÉTER *****
-%******** POUR LE SECOND DÉPOT                   *****
-%*****************************************************
-
-\color{white}
-
-\begin{picture}(0,0)
-\put(-152,-743){\rotatebox{90}{\Large \textsc{THESE DE DOCTORAT}}} \\
-\put(-120,-743){\rotatebox{90}{NNT : 2020UPASA001}}
-\end{picture}
+%\color{VerdeFCQ}
+%\begin{picture}(0,0)
+%\put(-152,-743){\rotatebox{90}{\Large \textsc{Tesis de doctorado}}} \\
+%\put(-120,-743){\rotatebox{90}{Texto texto texto}}
+%\end{picture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
-%*****************************************************
-%**  LOGO  ÉTABLISSEMENT PARTENAIRE SI COTUTELLE
-%**  CHANGER L'IMAGE PAR DÉFAUT **
-%*****************************************************
-\vspace{-14mm} % à ajuster en fonction de la hauteur du logo
-\flushright \includegraphics[scale=1]{logo2.png}
+%%%% Encabezado %%%%
+\vspace{-14mm} % ajustar según altura del logo
+\flushright \includegraphics[height=2.45cm]{isologo-fcq.png}
+\vspace{-28mm} % à ajuster en fonction de la hauteur du logo
+\flushleft \includegraphics[height=2.45cm]{unc_azul.png}
+%%%% Encabezado %%%%
 
 %*****************************************************
-%******************** TITRE **************************
+%******************** TÍTULO *************************
 %*****************************************************
 
-\flushright
-\vspace{10mm} % à régler éventuellement
-\color{Prune}
+\vspace{2cm} 
+\begin{center}
+Universidad Nacional de Córdoba\\
+Facultad de XXX\\
 
+\vspace{6mm}
+
+\color{Azul1FCQ}
 \fontsize{22}{26}\selectfont
-    \Huge Name of the thesis (on multiple line if necessary) \\
+\Huge Título de la tesis (varios renglones si es necesario) \\
+
 
 \normalsize
 \color{black}
-    \Large{\textit{Translation of the thesis title (on multiple lines if necessary)}} \\
-%*****************************************************
-
-
 \fontsize{8}{12}\selectfont
 
 \vspace{1.5cm}
 
+\Large {\color{Azul3FCQ} \textbf{Nombre A. Apellido/s}} 
+
+\bigskip
 \normalsize
-\textbf{Thèse de doctorat de l'université Paris-Saclay} \\
+Tesis de doctorado presentada a la Escuela de Posgrado
+de la Facultad de XXX como requisito para optar al grado
+de Doctorado en XXX \\
 
 \vspace{6mm}
 
-\small École doctorale n$^{\circ}$ d'accréditation, dénomination et sigle\\
-\small Spécialité de doctorat: voir annexe\\
-\small Graduate School : voir annexe. Référent : voir annexe \\
-\vspace{6mm}
 
-\footnotesize Thèse préparée dans la (ou les) unité(s) de recherche \textbf{Nom(s)} (voir annexe), sous la direction de \textbf{Prénom NOM}, titre du directeur ou de la directrice de thèse, la co-direction de \textbf{Prénom NOM}, titre du co-directeur ou de la co-directrice de thèse, le co-encadrement de \textbf{Prénom NOM}, titre, du co-encadrant ou de la co-encadrante ou la co-supervision de \textbf{Prénom NOM}, titre, du tuteur ou de la tutrice (en cas de partenariat industriel) \\
+Tesis realizada en el Instituto... y Departamento... \\
+\end{center}
+
 \vspace{15mm}
 
-\textbf{Thèse soutenue à Paris-Saclay, le JJ mois AAAA, par}\\
-\bigskip
-\Large {\color{Prune} \textbf{Prénom NOM}} % Changer le Prénom et le NOM
 
 %************************************
 \vspace{\fill} % ALIGNER LE TABLEAU EN BAS DE PAGE
@@ -127,88 +116,74 @@
 \bigskip
 
 \flushleft
-\small {\color{Prune} \textbf{Composition du jury}}\\
-{\color{Prune} \scriptsize {Membres du jury avec voix délibérative}} \\
+\small {\color{Azul3FCQ} \textbf{Comisión evaluadora de tesis}}\\
 \vspace{2mm}
-\scriptsize
-\begin{tabular}{|p{7cm}l}
-\arrayrulecolor{Prune}
-\textbf{Prénom NOM} &   Président ou Présidente\\
-Titre, Affiliation & \\
-\textbf{Prénom NOM} &  Rapporteur \& Examinateur / trice \\
-Titre, Affiliation   &   \\
-\textbf{Prénom NOM} &  Rapporteur \& Examinateur / trice \\
-Titre, Affiliation  &   \\
-\textbf{Prénom NOM} &  Examinateur ou Examinatrice \\
-Titre, Affiliation   &   \\
-\textbf{Prénom NOM} &  Examinateur ou Examinatrice \\
-Titre, Affiliation   &   \\
+%\scriptsize
+\begin{tabular}{|p{5cm}l}
+\arrayrulecolor{VerdeFCQ}
+\textbf{Título Nombres Apellidos} &   Miembro\\
+\textbf{Título Nombres Apellidos} &   Miembro\\
+\textbf{Título Nombres Apellidos} &   Miembro\\
+\textbf{Título Nombres Apellidos} &   Evaluadora Externa\\
 \end{tabular} 
 
 \end{titlepage}
 
-% Skip a page
+% Salto una página (anverso)
 \newpage
+% Para que no indique número de página:
+\thispagestyle{empty}
+
 \ 
 \newpage
 
-% page des résumés à garder en 2ème page. Si les résumés sont trop longs pour tenir sur une seule et même page, on peut mettre un résumé par page
-\thispagestyle{empty}
 \newgeometry{top=1.5cm, bottom=1.25cm, left=2cm, right=2cm}
 
-
 \noindent 
-%*****************************************************
-%***** LOGO DE L'ED À CHANGER IMPÉRATIVEMENT *********
-%*****************************************************
-\includegraphics[height=2.45cm]{logo_ups_SMEMAG.png}
+
+\includegraphics[height=2.45cm]{unc_azul.png}
+\includegraphics[height=2.45cm]{isologo-fcq.png}
 \vspace{1cm}
-%*****************************************************
+%***************************************************************************
+% Resúmenes en cuadritos. Se puede modificar :) Incluyen números de páginas.
+%***************************************************************************
 
 \small
 
-\begin{mdframed}[linecolor=Prune,linewidth=1]
+\begin{mdframed}[linecolor=VerdeFCQ,linewidth=1]
 
-\textbf{Titre:} Titre en français
+\textbf{Resumen} 
 
-    \noindent \textbf{Mots clés:} 3 à 6 mots clefs (version en français)
 
 \vspace{-.5cm}
 \begin{multicols}{2}
-\noindent \textbf{Résumé:} \lipsum[1-2]
+\noindent \lipsum[1-2]
 \end{multicols}
 \end{mdframed}
 
 \newpage
-\thispagestyle{empty}
 \ 
 
 \newpage
-\thispagestyle{empty}
 \ 
 
 \noindent 
-%*****************************************************
-%***** LOGO DE L'ED À CHANGER IMPÉRATIVEMENT *********
-%*****************************************************
-\includegraphics[height=2.45cm]{logo_ups_SMEMAG.png}
+
+\includegraphics[height=2.45cm]{unc_azul.png}
+\includegraphics[height=2.45cm]{isologo-fcq.png}
 \vspace{1cm}
 %*****************************************************
 
 \small
 
-\begin{mdframed}[linecolor=Prune,linewidth=1]
-
-    \textbf{Title:} Titre (en anglais)
-
-    \noindent \textbf{Keywords:} 3 à 6 mots clefs (version en anglais).
+\begin{mdframed}[linecolor=VerdeFCQ,linewidth=1]
 
 \begin{multicols}{2}
-\noindent \textbf{Abstract:} \lipsum[1-2]
+\noindent \textbf{Abstract} \lipsum[1-2]
 \end{multicols}
 \end{mdframed}
 
-\titleformat{\chapter}[hang]{\bfseries\Large\color{Prune}}{\thechapter\ -}{.1ex}
+\titleformat{\chapter}[hang]{\bfseries\Large\color{VerdeFCQ}}{\thechapter\ -}{.1ex}
 {\vspace{0.1ex}
 }
 [\vspace{1ex}]
@@ -226,10 +201,5 @@ Titre, Affiliation   &   \\
 [\vspace{0.1ex}]
 \titlespacing{\subsection}{3pc}{2ex plus .1ex minus .2ex}{.1pc}
 
-% Skip another page
-\newpage
-\thispagestyle{empty}
-\ 
-\newpage
 
 \end{document}

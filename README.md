@@ -161,6 +161,8 @@ For more information on the official requirements by the univsersity, you should
 The document [Official_Template_PhD_Universit__Paris_Saclay.pdf](chapters/titlepage/Official_Template_PhD_Universit__Paris_Saclay.pdf) contains the rules and recommendations for the thesis.
 In particular, it explains how the title page must be completed.
 The title page is stored in the file [Modele_These_UParisSaclay_2022.tex](chapters/titlepage/Modele_These_UParisSaclay_2022.tex) and is compiled by running `make titlepage` from the root of the template (see the section "How to run" for other methods).
+[Logo FCQ](https://www.fcq.unc.edu.ar/identidad-institucional/) (consultado el 31/3/26).
+[Logo UNC](https://www.unc.edu.ar/comunicaci%C3%B3n/versiones-descargables-del-escudo-de-la-unc) (consultado el 31/3/26).
 
 **The titlepage is often updated by the University. You must use the up to date version available on the official website.**
 
@@ -176,6 +178,12 @@ To use those options, you must specify them in the document class command `\docu
 ## Styling of the document
 
 ### Font
+Quise agregar algunos detalles de la fuente de la Reforma en carátula de la tesis. Para esto, dado que es una tipografía
+OpenType, hay que compilar usando XeLaTex, que es el compilador de XeTex ("an extension of TeX with built-in support for Unicode and OpenType").
+```TeX
+\usepackage{fontspec}
+\setmainfont{Reforma1918}
+```
 The font is the `utopia` font.
 
 ### Headers and footers
@@ -258,3 +266,24 @@ The theses are sorted in reverse chronological order.
 
 
 If you have used this template for your thesis, please contact us via the issue tracker (or by mail) to have your work added to this list.
+
+# Tips
+## Para instalar un paquete de latex en Manjaro Linux
+Tomado de [aquí](https://drankez.blogspot.com/2013/07/linux-instalar-un-paquete-latex.html), consultado el 30/3/2026.
+1. Descargar el paquete de CTAN.
+1. Si hay un archivo `.sty`, copiar la carpeta a `/usr/share/texmf-dist/tex/latex/`.
+1. Sino, compilar como
+```shell
+latex archivo.ins
+```
+Eso genera, entre otros archivos, uno del tipo `archivo.sty`.
+1. Copiar la carpeta a `/usr/share/texmf-dist/tex/latex/`.
+1. Actualizar la base de datos de latex con
+```shell
+mktexlsr (debí usar sudo).
+```
+
+## Agregar una fuente nueva
+Copiar archivos a `/usr/share/fonts`. O donde corresponda.
+
+Hecho con :mate: y :rock: as usual :)
