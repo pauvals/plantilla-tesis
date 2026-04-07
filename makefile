@@ -6,6 +6,6 @@ main:
 	cp build/PhD_Thesis.pdf pdfs/
 
 titlepage:
-	cd chapters/titlepage && latexmk --shell-escape -pdf --output-directory=../../build titlepage.tex
+	cd chapters/titlepage && latexmk --shell-escape -lualatex --output-directory=../../build titlepage.tex
 	cp build/titlepage.pdf pdfs/titlepage.pdf
 

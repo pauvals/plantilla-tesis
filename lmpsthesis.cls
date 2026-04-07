@@ -41,11 +41,7 @@
 \if@loademptypage
   \RequirePackage{emptypage}
 \fi
-% French
-%\if@loadfrench
-%  \RequirePackage[french]{babel}
-%\fi
-% Español
+% Castellano
 %\if@loadspanish
 %  \RequirePackage[spanish]{babel}
 %\fi

@@ -2,8 +2,10 @@
 
 This is a template for a PhD thesis with a separate title page.
 This template aims at setting up all the necessary packages and create the base outline of a thesis.
+Estoy revisando la plantilla y decidiendo entre explicaciones en castellano y/o en inglés, porque mi lengua materna vs. la lingua franca etc.
+Eventualmente dejaré lo que usé yo y considero que quede en ese estilo, y lo que considero útil por si alguien más usara esta plantilla. 
+(vscode quién te juna)
 
-A list of theses using this template (and its earlier versions) is available at the end of the README.
 
 ## How to compile
 To use the template, a LaTeX distribution must be installed on your system.
@@ -56,28 +58,6 @@ To make it more simple, it is also possible to add a button in the interface:
 - (Optional) By right-clicking there is an option to change the icon that will be displayed.
 - After validating with the "OK" button, there will be a button to the right of the buttons for compiling, displaying the pdf, etc. When you click on it, it is supposed to execute the command.
 It is also possible to change the shortcut in the "Keyboard shortcuts" tab of the "Configure TeXstudio" window.
-
-### From TeXstudio (en français)
-C'est possible de créer un bouton dans TeXstudio pour compiler le template.
-Voici les étapes:
-- Dans les menus en haut, il faut aller dans "Options" --> "Configurer TeXstudio ..."
-- Aller dans l'onglet "Production"
-- Il faut rentrer la commande suivante dans "Compilations Utilisateur"
-    - Nom de la commande (première boîte): `CompilePhD:CompilePhD` (vous pouvez mettre ce que vous voulez comme nom je pense)
-    - Commande (deuxième boîte):`make titlepage main | txs:///view-pdf-internal --embedded pdfs/PhD_Thesis.pdf`
-Cette commande compile d'abord la page de titre, puis le contenu et enfin elle affiche le pdf avec le lecteur de PDF de TeXstudio.
-
-À ce point, la compilation est accessible depuis l'interface en allant dans "Outils" --> "Utilisateur" -> "1: CompilePhD" ou en utilisant le raccourci "Alt+Shift+F1". Il est aussi possible de rajouter un bouton dans l'interface en suivant ces étapes:
-- "Options" --> "Configurer TeXStudio ..."
-- Il faut cocher "Afficher les options avancées" en bas à gauche
-- Aller dans l'onglet "Barre d'outils"
-- À gauche, il faut choisir dans quelle barre d'outil on veut mettre le raccourci avec le menu déroulant. Le mieux est de choisir "Outils".
-- À droite, il faut aller chercher la commde de compilation: dans le menu déroulant, il faut choisir "Tous les menus". En dessous, il faut alors choisir "Outils" --> "Utilisateur" -> "1: CompilePhD".
-- Après avoir sélectionner la commande, il faut la transférer à gauche avec les flèches.
-- (Optionnel) En faisant un clique droit, il y a une option pour changer l'icône qui sera affichée.
-- Après avoir validé avec le bouton "OK", il y aura un bouton à droite des boutons de compilations, affichage du pdf, etc. Quand on clique dessus, c'est sensé exécuter la commande.
-
-Il est aussi possible de changer le raccourci dans l'onglet "Raccourcis clavier" de la fenêtre "Configurer TeXstudio".
 
 ### Cleaning
 If for any reasons, the temporary and cache files become you can delete the entire `build` directory.
@@ -156,15 +136,13 @@ The different files are listed below.
 - `README.md` is this file !
 
 ## Title page
-The title page of the Univsersité Paris-Saclay is stored in the folder [chapters/titlepage](chapter/titlepage).
-For more information on the official requirements by the univsersity, you should consult [Le guide de la soutenane du doctorat](https://www.universite-paris-saclay.fr/recherche/doctorat-et-hdr/le-guide-de-la-soutenance-de-doctorat).
-The document [Official_Template_PhD_Universit__Paris_Saclay.pdf](chapters/titlepage/Official_Template_PhD_Universit__Paris_Saclay.pdf) contains the rules and recommendations for the thesis.
-In particular, it explains how the title page must be completed.
-The title page is stored in the file [Modele_These_UParisSaclay_2022.tex](chapters/titlepage/Modele_These_UParisSaclay_2022.tex) and is compiled by running `make titlepage` from the root of the template (see the section "How to run" for other methods).
+The title page files are located in the folder [chapters/titlepage](chapter/titlepage). It is compiled by running `make titlepage` 
+from the root of the template (see the section "How to run" for other methods).
 [Logo FCQ](https://www.fcq.unc.edu.ar/identidad-institucional/) (consultado el 31/3/26).
 [Logo UNC](https://www.unc.edu.ar/comunicaci%C3%B3n/versiones-descargables-del-escudo-de-la-unc) (consultado el 31/3/26).
+El estilo final de la carátula está inspirado en el original del proyecto forkeado, con unas pequeñas intervenciones que pueden ser
+modificadas nuevamente :)
 
-**The titlepage is often updated by the University. You must use the up to date version available on the official website.**
 
 ## Options of the lmpsthesis class
 The `lmpsthesis` document class has different options:
@@ -184,7 +162,9 @@ OpenType, hay que compilar usando XeLaTex, que es el compilador de XeTex ("an ex
 \usepackage{fontspec}
 \setmainfont{Reforma1918}
 ```
+`otfinfo -f `kpsewhich Reforma1918-NegraItalica.otf` `
 The font is the `utopia` font.
+
 
 ### Headers and footers
 The header are footer are set with the package `fancyhdr`.
@@ -247,25 +227,6 @@ To change the different sections/chapters names that are defined in the template
 - When using `babel` with the `french` option, the label names *must not* contains colon ":".
 
 
-## Theses using the template
-
-This section lists the theses that have been created using this template.
-Note that earlier versions may not include the current styling.
-The theses are sorted in reverse chronological order.
-
-- **Campagna, G. (2025).** *Effect of the mechanical stress on the training of Nb3Sn superconducting magnets.*
-- **Wurtzer, F. (2024).** *Stratégie de couplage physiques/données pour la construction d'un jumeau numérique.*
-- **Bagur, L. (2024).** *Modélisation des effets de l'injection de fluide sur une instabilité sismique en utilisant les méthodes d'éléments de frontière rapides.*
-- **Rostagni, H. (2024).** *Modélisation objective de mécanismes de dissipation non-linéaires : application aux structures en maçonnerie.*
-- **Ribeiro Nogueira, B. (2024).** *Non-local damage mechanics with evolving interactions for modeling quasi-brittle materials : anisotropic damage and gradient-enhanced Eikonal approach.*
-- **Loiseau, F. (2023).** *Formulation of anisotropic damage in quasi-brittle materials and structures based on discrete element simulation.* [https://theses.hal.science/tel-04602381](https://theses.hal.science/tel-04602381)
-- **Ruda, A. (2023).** *Méthode de décomposition de domaine mixte pour la simulation magnétostatique de machines électriques.* [https://theses.hal.science/tel-04576886](https://theses.hal.science/tel-04576886)
-- **Daby-Seesaram, A. (2023).** *Towards an Optimal Multi-query Framework based on Model-order Reduction for Non-linear Dynamics.* [https://theses.hal.science/tel-04555791](https://theses.hal.science/tel-04555791)
-- **Caruel, M. (2023).** *Caractérisation et modélisation thermo-mécanique des alliages à mémoire de forme - application au 26at%Nb-Ti.* [https://theses.hal.science/tel-04636508](https://theses.hal.science/tel-04636508)
-- **Cherrière, T. (2023)** *Élaboration de méthodes et d'outils logiciels pour l'optimisation topologique magnéto-mécanique de machines électriques tournantes.* [https://theses.hal.science/tel-04636530](https://theses.hal.science/tel-04636530)
-
-
-If you have used this template for your thesis, please contact us via the issue tracker (or by mail) to have your work added to this list.
 
 # Tips
 ## Para instalar un paquete de latex en Manjaro Linux
@@ -286,4 +247,58 @@ mktexlsr (debí usar sudo).
 ## Agregar una fuente nueva
 Copiar archivos a `/usr/share/fonts`. O donde corresponda.
 
-Hecho con :mate: y :rock: as usual :)
+# Errores y aprendizajes
+## Instalar LuaLaTex :P
+
+Tenía el siguiente error al compilar con lualatex:
+```shell
+ Running 'lualatex  --shell-escape -recorder -output-directory="/.../build"  "titlepage.tex"'
+
+------------
+
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux) 
+
+ system commands enabled.
+
+(./titlepage.tex
+
+LaTeX2e <2025-11-01>
+
+L3 programming layer <2026-01-19>
+
+[\directlua]:1: module 'luaotfload-main' not found:
+
+    no field package.preload['luaotfload-main']
+
+    [kpse lua searcher] file not found: 'luaotfload-main'
+
+    [kpse C searcher] file not found: 'luaotfload-main'
+
+Error in luaotfload: reverting to OT1
+```
+
+y lo solucioné instalando `texlive-luatex` 
+`sudo pacman -S texlive-luatex`
+
+seguido de `sudo mktexlsr` para actualizar paquetes latex ("used to generate the ls-R databases used by the kpathsea library. 
+It will create them for the specified directories, or for a default list if no directories are specified").
+
+## Hyphens
+[Ver acá.](https://github.com/hyphenation/tex-hyphen)
+No debería ser un error grave, según el mismo manual de babel.
+```
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language 'Spanish' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 51.
+```
+## Comandos útiles
+- `tlmgr` permite instalar paquetes de latex.
+- `fc-list` tira un listado de fuentes instaladas en el sistema, y sus ubicaciones.
+- `otfinfo -f `kpsewhich Reforma1918-NegraItalica.otf` ` tira info de "_font features_" o características de una fuente OpenType determinada.
+- `kpsewhich nombre` ubica el archivo, y si no lo encuentra no devuelve nada. 
+
+
+Hecho con :mate: y :metal: as usual :)
+
