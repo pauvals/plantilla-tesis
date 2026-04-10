@@ -1,4 +1,10 @@
 % ------------------------------------------------------------------------
+% Class file de tesis doctoral.
+% Versión de pauvals (@github)
+% 4/2026
+% Basada en:
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
 % Title: Class file for LMPS-themed thesis template
 % Authors:
 %   - Flavien Loiseau (flavien.loiseau@ens-paris-saclay.fr),
@@ -10,22 +16,23 @@
 % Class %
 %-------%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{lmpsthesis}[16/12/2023 Class for PhD Thesis at LMPS]
+\ProvidesClass{cftesis}[2026/04/10 clase para tesis]
+% The date should be in the form YYYY/MM/DD
 
 %---------%
 % Options %
 %---------%
 % Descriptions
 %   - emptypage: make the pages with no content empty (completly blank)
-%   - french: load babel in french
+%   - cast: load babel in spanish (castellano)
 %   - tikz: load tikz (and externalization), it is recommended to name the tikzpicture using \tikzsetnextfilename
 %   - all other options are passed to the book class
 % Empty page
 \newif\if@loademptypage %\@loademptypagefalse
 \DeclareOption{emptypage}{\@loademptypagetrue}
-% French
-%\newif\if@loadfrench %\@loadfrenchfalse
-%\DeclareOption{french}{\@loadfrenchtrue}
+% Castellano
+\newif\if@loadcast %\@loadcastfalse
+\DeclareOption{spanish}{\@loadcasttrue}
 % Tikz
 \newif\if@loadtikz %\@loadtikzfalse
 \DeclareOption{tikz}{\@loadtikztrue}
@@ -42,9 +49,9 @@
   \RequirePackage{emptypage}
 \fi
 % Castellano
-%\if@loadspanish
-%  \RequirePackage[spanish]{babel}
-%\fi
+\if@loadcast
+  \RequirePackage[spanish]{babel}
+\fi
 % Tikz
 % see in the Tikz section
 
@@ -57,26 +64,26 @@
 % Packages %
 %----------%
 %%% Encoding
-\RequirePackage[utf8]{inputenc}
+%\RequirePackage[utf8]{inputenc} % "inputenc package ignored with utf8 based engines"
 \RequirePackage[T1]{fontenc}
 
 %%% Font
-\RequirePackage{fourier}
+\RequirePackage{fourier-otf}
 \renewcommand{\baselinestretch}{1.1} % Increase the base line spacing
+\usepackage{fontspec}
+\setmainfont{Reforma1918}
 
 %%% Colors
 % Package
 \RequirePackage{xcolor}
 % Define colors
-\definecolor{accentcolor}{RGB}{25,40,85} % FLAVOR Change accent color if you want
-\definecolor{lmpsblue}{RGB}{25,40,85}
-\definecolor{lmpsgrey}{RGB}{130,130,130}
-\definecolor{toolred}{RGB}{255,70,60}
-\definecolor{toolorange}{RGB}{255,160,40}
-\definecolor{toolrose}{RGB}{255,60,255}
-\definecolor{toolblue}{RGB}{100,140,255}
-\definecolor{toolgreen}{RGB}{0,200,140}
-\definecolor{toolviolet}{RGB}{130,30,255}
+\definecolor{accentcolor}{RGB}{00,00,102} % FLAVOR Change accent color if you want
+\definecolor{Azul1FCQ}{RGB}{00,00,102} 
+\definecolor{Azul2FCQ}{RGB}{00,00,230}
+\definecolor{Azul3FCQ}{RGB}{00,85,124}
+\definecolor{Azul4FCQ}{RGB}{48,156,174}
+\definecolor{VerdeFCQ}{RGB}{47,172,102}
+\definecolor{AmarilloFCQ}{RGB}{238,205,00}
 
 %%% Geometry
 % Geometry
@@ -203,7 +210,7 @@
 
 %%% Bibliography
 % Biblatex
-\RequirePackage[backend=biber,bibstyle=custom-apa,labeldate=year,citestyle=apa,isbn=false,url=false,eprint=false,backref=true,sortcites=false,sorting=nyt,uniquename=false,uniquelist=false,maxcitenames=2]{biblatex}
+\RequirePackage[backend=biber,refsection=section,bibstyle=custom-apa,labeldate=year,citestyle=apa,isbn=false,url=false,eprint=false,backref=true,sortcites=false,sorting=nyt,uniquename=false,uniquelist=false,maxcitenames=2]{biblatex}
 % Increase the line spacing in the bibliography
 \setlength\bibitemsep{1.5\itemsep}
 

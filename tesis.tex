@@ -1,4 +1,9 @@
 % ------------------------------------------------------------------------
+% Plantilla de tesis doctoral para UNC, Argentina.
+% Versión de pauvals (@github)
+% 4/2026
+% Basada en:
+% ------------------------------------------------------------------------
 % Title: Template for LMPS-themed thesis (main file)
 % Authors:
 %   - Flavien Loiseau (flavien.loiseau@ens-paris-saclay.fr),
@@ -9,7 +14,7 @@
 % !BIB TS-program = biber
 % !BIB program = biber
 
-\documentclass[12pt,a4paper,openright,tikz]{lmpsthesis}
+\documentclass[12pt,a4paper,openright,tikz]{cftesis}
 
 %%% To remove
 \usepackage{lipsum}
@@ -17,7 +22,7 @@
 %%% Setup metadata
 \hypersetup{
     pdftitle={TODO},
-    pdfsubject={Ph.D. Thesis},
+    pdfsubject={Tesis doctoral},
     pdfauthor={TODO},
     pdfkeywords={TODO}
 }
@@ -85,6 +90,9 @@
 \part{My first part title}
 
 \input{chapters/1_mechanical_degradation_of_quasi-brittle_materials.tex}
+% Display the bibliography
+% https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber
+\printbibliography[heading=subbibliography]
 \clearpage\null
 
 % Part II (can be removed)
@@ -92,6 +100,8 @@
 
 % Conclusion
 \input{chapters/conclusion.tex}
+% Display the bibliography
+\printbibliography[heading=subbibliography]
 \clearpage\null
 
 % Appendices
@@ -102,8 +112,6 @@
 
 %%% Backmatter
 \backmatter
-% Display the bibliography
-\printbibliography[heading=bibintoc]
 
 \end{document}
 
