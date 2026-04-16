@@ -1,4 +1,4 @@
-# PhD Thesis template
+# Plantilla para tesis doctoral
 
 This is a template for a PhD thesis with a separate title page.
 This template aims at setting up all the necessary packages and create the base outline of a thesis.
@@ -223,10 +223,6 @@ Para hacer estos cambios modificar:
 - "Lista de símbolos" en `notations.tex` (definición del comando `\listnotationsname`),
 - "Agradecimientos" en `preliminar.tex`,
 - (opcional, actualmente desactivado) "Resumen de capítulo" in `tesis.tex`.
-
-### Known issues in french
-- When using `babel` with the `french` option, the label names *must not* contains colon ":".
-
 
 Hecho con :mate: y :metal: as usual :)
 
