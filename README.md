@@ -161,7 +161,11 @@ To use those options, you must specify them in the document class command `\docu
 ### Font
 Elegí la fuente de la [Reforma UNC](https://www.unc.edu.ar/comunicaci%C3%B3n/reforma-la-tipograf%C3%ADa-dise%C3%B1ada-para-la-unc-y-de-acceso-libre).
 Para esto, dado que es una tipografía OpenType, hay que compilar usando LuaLaTex.
-Adjunto una carpeta con la tipografía y su correspondiente licencia **Creative Commons BY-ND 4.0**.
+
+Adjunto una carpeta con la tipografía y su correspondiente licencia **Creative Commons BY-ND 4.0**i, bajo la cual hago uso de la tipografía. 
+Fue diseñada por la fundidora digital cordobesa PampaType **(Alejandro Lo Celso y Guido Ferreyra)**, 
+en un trabajo articulado desde el Área de Diseño de la Prosecretaría de Comunicación Institucional de la UNC.
+Además, tienen [un artículo](https://www.pampatype.com/es/blog/reforma) interesante para leer respecto al trabajo de diseño.
 
 ### Headers and footers
 The header are footer are set with the package `fancyhdr`.
