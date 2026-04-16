@@ -159,8 +159,9 @@ To use those options, you must specify them in the document class command `\docu
 ## Styling of the document
 
 ### Font
-Elegí la fuente de la Reforma UNC. Para esto, dado que es una tipografía
-OpenType, hay que compilar usando LuaLaTex.
+Elegí la fuente de la [Reforma UNC](https://www.unc.edu.ar/comunicaci%C3%B3n/reforma-la-tipograf%C3%ADa-dise%C3%B1ada-para-la-unc-y-de-acceso-libre).
+Para esto, dado que es una tipografía OpenType, hay que compilar usando LuaLaTex.
+Adjunto una carpeta con la tipografía y su correspondiente licencia **Creative Commons BY-ND 4.0**.
 
 ### Headers and footers
 The header are footer are set with the package `fancyhdr`.
@@ -191,6 +192,7 @@ To avoid any issues, it is recommended to export the bibliography from Zotero wi
 - `biblatex` format;
 - disabled "Export notes" and "Export files";
 - `Unicode (utf-8)` encoding.
+
 Cambié el uso de la bibliografía para citar con estilo de la ACS, y para imprimir la bibliografía por capítulo.
 
 ## Notations
