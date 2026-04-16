@@ -16,8 +16,8 @@
 % Class %
 %-------%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cftesis}[2026/04/10 clase para tesis]
 % The date should be in the form YYYY/MM/DD
+\ProvidesClass{cftesis}[2026/04/10 clase para tesis]
 
 %---------%
 % Options %
@@ -165,6 +165,10 @@
 % Choose header and footer for mainmatter
 \let\oldmainmatter\mainmatter
 \gdef\mainmatter{\oldmainmatter\pagestyle{fancy}}
+% Cambio nombres a castellano: Índice para ToC (Table of Contents)
+\renewcommand*\contentsname{Índice}
+% "Parte" si se quieren usar
+\renewcommand*\partname{Parte}
 
 %%% Title styles
 \RequirePackage{titlesec}
@@ -210,7 +214,7 @@
 
 %%% Bibliography
 % Biblatex
-\RequirePackage[backend=biber,refsection=section,bibstyle=custom-apa,labeldate=year,citestyle=apa,isbn=false,url=false,eprint=false,backref=true,sortcites=false,sorting=nyt,uniquename=false,uniquelist=false,maxcitenames=2]{biblatex}
+\RequirePackage[backend=biber,style=chem-acs,refsection=section]{biblatex}
 % Increase the line spacing in the bibliography
 \setlength\bibitemsep{1.5\itemsep}
 
@@ -227,43 +231,42 @@
 \usepackage{longtable}
 
 %%% Minitoc
-\RequirePackage{minitoc}
+% \RequirePackage{minitoc}
 % \nomtcrule                                                                         % FLAVOR Remove minitoc rules
 % \mtcsetformat{minitoc}{dotinterval}{2}
 % \renewcommand{\mtctitle}{\textcolor{accentcolor}{Contents}}                      % Add color to minitoc title (WARNING: might pro
-\renewcommand{\mtcfont}{\small\rmfamily\upshape\mdseries\color{accentcolor!80}}    % Change color of    section in minitoc
-\renewcommand{\mtcSfont}{\small\rmfamily\upshape\bfseries\color{accentcolor!80}}   % Change color of subsection in minitoc
-\dominitoc
+% \renewcommand{\mtcfont}{\small\rmfamily\upshape\mdseries\color{accentcolor!80}}    % Change color of    section in minitoc
+% \renewcommand{\mtcSfont}{\small\rmfamily\upshape\bfseries\color{accentcolor!80}}   % Change color of subsection in minitoc
+% \dominitoc
 
 %%% Epigraph
 \RequirePackage{epigraph}
 
 %%% Custom commands
-% Introduction
+% Introducción
 \newcommand{\thesisintroduction}[1]{%
     \chapter*{#1}
-    \label{cha:introduction}
+    \label{cha:introduccion}
     %
-    \addcontentsline{toc}{chapter}{Introduction}    % Add introduction to TOC
-    \mtcaddchapter                                  % Fix enabling minitoc to show correctly
-    \markboth{Introduction}{}                       % Set headers (https://tex.stackexchange.com/questions/426537/wrong-header-in-unnumbered-chapter)
+    \addcontentsline{toc}{chapter}{Introducción}    % Add introduction to TOC
+    % \mtcaddchapter                                  % Fix enabling minitoc to show correctly
+    \markboth{Introducción}{}                       % Set headers (https://tex.stackexchange.com/questions/426537/wrong-header-in-unnumbered-chapter)
 }
-% Conclusion
+% Conclusiones
 \newcommand{\thesisconclusion}[1]{%
     \bookmarksetup{startatroot}                 % Fix to show the conclusion outside of previous part in PDF reader outline (https://tex.stackexchange.com/questions/12542/is-it-possible-to-add-chapter-after-a-few-parts-at-the-same-level-of-hierarch)
     \chapter*{#1}
-    \label{cha:conclusion}
-    %
-    \addcontentsline{toc}{chapter}{Conclusion}  % Add conclusion to TOC
-    \mtcaddchapter                              % Fix enabling minitoc to show correctly
-    \markboth{Conclusion}{}                     % Set headers (https://tex.stackexchange.com/questions/426537/wrong-header-in-unnumbered-chapter)
+    \label{cha:conclusiones}
+    \addcontentsline{toc}{chapter}{Conclusiones}  % Add conclusion to TOC
+    % \mtcaddchapter                              % Fix enabling minitoc to show correctly
+    \markboth{Conclusiones}{}                     % Set headers (https://tex.stackexchange.com/questions/426537/wrong-header-in-unnumbered-chapter)
     \setcounter{section}{0}                     % Increment the section counter to reset the section numbers in unumbered chapter (https://tex.stackexchange.com/questions/163492/restart-section-numbering-after-unnumbered-chapter)
 }
 % Appendix
 \newcommand{\thesisappendix}{
     \appendix
     \part*{\appendixname}
-    \renewcommand\chaptername{Appendix}
+    \renewcommand\chaptername{Apéndice}
     \renewcommand{\thechapter}{\Alph{chapter}}
 }
 

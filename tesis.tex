@@ -16,7 +16,7 @@
 
 \documentclass[12pt,a4paper,openright,tikz]{cftesis}
 
-%%% To remove
+%%% Para tener texto de prueba
 \usepackage{lipsum}
 
 %%% Setup metadata
@@ -56,10 +56,10 @@
 }
 % Chapter summary
 \newenvironment{chaptersummary}{%
-    \section*{\faPenNib~~Summary of the Chapter}%
+    \section*{\faPenNib~~Resumen del capítulo}%
     \label{sec:summary_{\thechapter}}
     \stepcounter{section}
-    \addcontentsline{toc}{section}{\protect\numberline{\thesection}Summary of the Chapter}
+    \addcontentsline{toc}{section}{\protect\numberline{\thesection}Resumen del capítulo}
 }{}
 
 %%% User modifications
@@ -73,41 +73,48 @@
 
 %%% Frontmatter
 \frontmatter
-% University titlepage
-\includepdf[pages=-]{pdfs/titlepage.pdf}    % Include the title page
-\setcounter{page}{1}                        % Reset the page counter
-% Frontmatter
-\input{chapters/frontmatter}
+% Portada de la tesis
+\includepdf[pages=-]{pdfs/portada.pdf}    % Include the title page
+\setcounter{page}{1}                      % Reset the page counter
+% Páginas preliminares
+\input{capitulos/preliminar}
 
-%%% Main matter
+%%% Contenido principal
 \mainmatter
 
-% Introduction
-\input{chapters/introduction.tex}
+% Introducción
+\input{capitulos/intro.tex}
 \clearpage\null
 
-% Part I (can be removed)
-\part{My first part title}
+% Parte I (se puede sacar, agrega un mega título)
+\part{Título de una primera parte}
 
-\input{chapters/1_mechanical_degradation_of_quasi-brittle_materials.tex}
-% Display the bibliography
-% https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber
-\printbibliography[heading=subbibliography]
+\begin{refsection}
+  \input{capitulos/cap_1.tex}
+  % Display the bibliography
+  \clearpage\null
+  \printbibliography[heading=subbibliography,title={Bibliografía}]
+  %\printbibliography[type=article,title={Articles only}]
+\end{refsection}
+
 \clearpage\null
 
-% Part II (can be removed)
-\part{My second part title}
+% Parte II (se puede sacar, agrega un mega título)
+%\part{Título de una segunda parte}
 
 % Conclusion
-\input{chapters/conclusion.tex}
-% Display the bibliography
-\printbibliography[heading=subbibliography]
+\begin{refsection}
+\input{capitulos/conclusiones.tex}
+  % Display the bibliography
+  \clearpage\null
+  \printbibliography[heading=subbibliography,title={Bibliografía}]
+\end{refsection}
 \clearpage\null
 
 % Appendices
 \thesisappendix
 
-\input{chapters/appendices/my_first_appendix.tex}
+\input{capitulos/apendices/apendices.tex}
 \clearpage\null
 
 %%% Backmatter
