@@ -68,10 +68,28 @@
 \RequirePackage[T1]{fontenc}
 
 %%% Font
-\RequirePackage{fourier-otf}
+%\RequirePackage{fourier-otf}
 \renewcommand{\baselinestretch}{1.1} % Increase the base line spacing
 \usepackage{fontspec}
-\setmainfont{Reforma1918}
+% Uso tipografía Reforma. RawFeature para ajustar estilo de números
+% (hay otras opciones)
+\setmainfont{Reforma1918}[
+  RawFeature={+lnum}
+]
+\usepackage{unicode-math}
+\setmathfont{Erewhon-Math.otf} % De esta usa símbolos que no estén en Reforma
+\setmathfont{Reforma1918}[
+  Numbers={Lining},
+  range=up/{latin,Latin,num},
+  script-features={},
+  sscript-features={}
+]
+\setmathfont{Reforma1918-BlancaItalica}[
+  Numbers={Lining},
+  range=it/{latin,Latin},
+  script-features={},
+  sscript-features={}
+]
 
 %%% Colors
 % Package
@@ -92,7 +110,7 @@
     left=1in,     % left margin
     right=1in,    % right margin
     top=1in,      % top margin
-    headheight=19pt,
+    headheight=21pt,
     headsep=0.42in,
     bottom=1in,    % bottom margin
     footskip=0.6in,
@@ -111,6 +129,8 @@
 \captionsetup{labelsep=bullet}
 % Figure after the first reference
 \RequirePackage{flafter}
+% Tablas en castellano (babel sino pone "Cuadro")
+%\renewcommand{\tablename}{Tabla}
 
 %%% Tikz
 \if@loadtikz
@@ -169,6 +189,8 @@
 \renewcommand*\contentsname{Índice}
 % "Parte" si se quieren usar
 \renewcommand*\partname{Parte}
+% "Capítulo"
+\renewcommand*\chaptername{Capítulo}
 
 %%% Title styles
 \RequirePackage{titlesec}
